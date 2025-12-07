@@ -1,8 +1,7 @@
 project
 │
 ├── data
-│   ├── raw
-│   ├── processed
+│   └── car_24_database.xls
 │
 ├── src
 │   ├── data_loader.py
@@ -10,13 +9,11 @@ project
 │   ├── train_xgboost.py
 │   ├── detect_anomaly.py
 │   ├── depreciation.py
-│   ├── visualize.py
-│   └── utils.py
+│   └── visualize.py
 │
 ├── test
-│   ├── test_preprocess.py
 │   ├── test_xgboost.py
 │   ├── test_anomaly.py
-│   ├── test_depreciation.py
+│   └── test_depreciation.py
 │
 └── main.py

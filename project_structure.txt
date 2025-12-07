@@ -1,0 +1,22 @@
+project
+│
+├── data
+│   ├── raw
+│   ├── processed
+│
+├── src
+│   ├── data_loader.py
+│   ├── preprocess.py
+│   ├── train_xgboost.py
+│   ├── detect_anomaly.py
+│   ├── depreciation.py
+│   ├── visualize.py
+│   └── utils.py
+│
+├── test
+│   ├── test_preprocess.py
+│   ├── test_xgboost.py
+│   ├── test_anomaly.py
+│   ├── test_depreciation.py
+│
+└── main.py

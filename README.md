@@ -3,5 +3,7 @@ Repo đồ án sinh viên phục vụ cho môn học IS217.Q11
 
 # để cài env  
 conda env create -f environment.yml
+# để cập nhật env
+conda env update -f environment.yml
 # xong rồi khởi động 
 conda activate OlapDataMining

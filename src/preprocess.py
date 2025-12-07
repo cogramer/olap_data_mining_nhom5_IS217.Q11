@@ -16,7 +16,7 @@ def preprocess(df):
     df["Price_per_km"] = df["Price"] / (df["Distance"] + 1)
 
     # Categorial encoding
-    cat_cols = ["BrandName", "DriveType", "FuelType", "Location", "OwnerCount", "VehicleType"]
+    cat_cols = ["BrandName", "DriveType", "FuelType", "Location", "OwnerCount", "VehicleType", "CarName"]
     encoder = OrdinalEncoder()
     df[cat_cols] = encoder.fit_transform(df[cat_cols])
 

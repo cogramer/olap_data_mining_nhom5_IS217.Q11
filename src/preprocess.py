@@ -18,9 +18,20 @@ def preprocess(df):
     # Categorial encoding
     cat_cols = ["BrandName", "DriveType", "FuelType", "Location", "OwnerCount", "VehicleType", "CarName"]
     encoder = OrdinalEncoder()
-    df[cat_cols] = encoder.fit_transform(df[cat_cols])
 
-    # Final cleaning
+    # Fit first to save BrandName mapping
+    encoder.fit(df[cat_cols])
+
+    # --- Build and save BrandName mapping ---
+    brand_categories = encoder.categories_[cat_cols.index("BrandName")]
+    brand_mapping = {brand: idx for idx, brand in enumerate(brand_categories)}
+
+    print("BrandName Encoding Mapping:")
+    print(brand_mapping)
+
+    # Apply the transform
+    df[cat_cols] = encoder.transform(df[cat_cols])
+
     df = df.dropna()
 
-    return df
+    return df, brand_mapping

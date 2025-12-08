@@ -9,7 +9,7 @@ def fit_depreciation(df):
     price = df["Price"].values
 
     if len(age) < 2:
-        return None
+        return None, None
 
     try:
         params, _ = curve_fit(
@@ -20,7 +20,13 @@ def fit_depreciation(df):
             bounds=([0, 0], [np.inf, 1]),
             maxfev=5000
         )
-        return params
+
+        a, b = params
+        # Annual depreciation as a percentage
+        annual_pct_drop = (1 - np.exp(-b)) * 100
+
+        return params, annual_pct_drop
+    
     except Exception as e:
         print("Skipping due to curve_fit error:", e)
         return None

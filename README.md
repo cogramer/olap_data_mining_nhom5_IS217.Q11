@@ -7,3 +7,5 @@ conda env create -f environment.yml
 conda env update -f environment.yml
 # xong rồi khởi động 
 conda activate OlapDataMining
+# CÁCH CHẠY
+clone repo -> khởi động env -> chạy "python main.py" 
